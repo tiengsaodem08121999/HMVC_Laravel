@@ -4,6 +4,7 @@ namespace App\Modules\Category\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Modules\Category\Models\Category;
+use App\Modules\Category\Request\CategoryRequest;
 
 class CategoryController extends Controller{
     /**
@@ -19,5 +20,13 @@ class CategoryController extends Controller{
         return view('Category::index',[
             'category' => $category,
         ]);
-}
+    }
+
+    public function create(){
+        return view('Category::create');
+    }
+
+    public function store(CategoryRequest $request){
+            dd($request);
+    }
 }
